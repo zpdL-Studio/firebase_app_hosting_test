@@ -1,5 +1,6 @@
 export class NativeBridge {
   private _window: any = window;
+  private _bridge: any = this._window?.flutter_inappwebview;
 
   private static instance: NativeBridge;
 
@@ -22,5 +23,10 @@ export class NativeBridge {
     console.log(this._window);
     console.log(this._window?.device?.platform);
     return this._window?.device?.platform?.toLowerCase();
+  }
+
+  public routeToLogin(): Promise<String | null> {
+    if (this._bridge) return this._bridge?.callHandler("NativeRoute", "/login");
+    throw new Error("routeToLogin is not set native bridge");
   }
 }
