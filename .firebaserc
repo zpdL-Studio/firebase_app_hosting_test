@@ -1,6 +1,7 @@
 {
   "projects": {
-    "firebase_app_hosting_test": "sangbong-c5877"
+    "firebase_app_hosting_test": "sangbong-c5877",
+    "firebase-app-hosting-test": "sangbong-c5877"
   },
   "targets": {},
   "etags": {},
